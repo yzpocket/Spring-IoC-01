@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!-- [1] 기본 생성자를 이용해 EmpImpl 빈 생성 -->
+	<bean id="e1" class="ex05.EmpImpl"/>
+	<!-- [2] String 유형 1개(name) 생성자를 통해 주입해보자.-->
+	<bean id="e2" class="ex05.EmpImpl">
+		<constructor-arg index="0" type="java.lang.String" value="James"/>
+	</bean>
+	<!-- [3] String 유형 2개(name,dept) 생성자를 통해 주입해보자.-->
+	<bean id="e3" class="ex05.EmpImpl">
+		<constructor-arg index="0" type="java.lang.String" value="MARKETING"/>
+		<constructor-arg index="1" type="java.lang.String" value="James"/>
+	</bean>
+	<!--[4] 부서,이름,급여  -->
+	<!--[5] Random객체를 받는 생성자 -->
+</beans>
