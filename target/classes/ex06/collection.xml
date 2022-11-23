@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- [1] ServiceImpl Bean 생성하고 List를 setter 주입하기  -->
+	<bean id="s1" class="ex06.ServiceImpl">
+	<!-- ArrayList는 아래 <list> 아래 <value>를 넣는다. 
+		List<String list=new ArrayList<>();
+		list.add("Java");
+		list.add(.... ;
+		
+		ServiceImpl s1=new ServiceImpl();
+		s1.setList(list);
+	-->
+		<property name="list"> 
+			<list>
+				<value>Java</value>
+				<value>JavaScript</value>
+				<value>JSP</value>
+				<value>Spring</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- [2] ServiceImpl Bean 생성하고 Map를 setter 주입하기  -->
+	<!-- [2] 
+		Map<String,Integer> map=new HashMap<>();
+		map.put("Age",22);
+		map.put("Salary",5000)
+		map.put("BirthYear",5000)
+		
+		ServiceImpl s2=new ServiceImpl();
+		s2.setMap(map);
+	-->
+	<bean id="s2" class="ex06.ServiceImpl">
+		<property name="map">
+			<map>
+				<entry>
+					<key>
+						<value>Age</value>
+					</key>
+					<value>22</value>
+				</entry>
+				
+				<entry key="Salary" value="5000"/>
+				<entry key="BirthYear" value="1988"/>
+			</map>
+		</property>
+	</bean>	
+
+<!--[3] Set객체
+		Set<String> set=new HashSet<>();
+		set.add("Oracle")...
+		....
+		ServiceImpl s3=new ServiceImpl();
+		s3.setSet(set);
+	-->
+	<bean id="s3" class="ex06.ServiceImpl">
+		<property name="set">
+			<set>
+				<value>Oracle</value>
+				<value>SQL</value>
+				<value>SQL Server</value>
+			</set>
+		</property>
+	</bean>
+	
+	<!-- [4] Properties
+		Properties prop=new Properties();
+		prop.setProperty("user","scott");...
+		...
+		ServiceImpl s4=new ServiceImpl();
+		s4.setProp(prop);
+	-->
+	<bean id="s4" class="ex06.ServiceImpl">
+		<property name="prop">
+			<props>
+				<prop key="user">multi</prop>
+				<prop key="passwd">tiger</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
