@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- MessageImpl 빈을 등록하세요 id="mb1"
+<!-- MessageImpl 빈을 등록하세요 id="mb1"
 		greeting과 name값을 주입(injection)해보자.
 		mb1객체에 랜덤 객체를 setter로 주입해보세요. 
-		[1] setter injection  <<<<======= 이것부터
+		[1] setter injection  <<<<======= 이 예제이다.
 		[2] constructor injection -->
 		
 		

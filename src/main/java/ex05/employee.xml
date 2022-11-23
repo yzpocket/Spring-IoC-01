@@ -3,6 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 	
+<!-- MessageImpl 빈을 등록하세요 id="e~"
+		con 
+		[1] setter injection  
+		[2] constructor injection <<<<======= 이 예제이다. -->
+		
 	<!-- [1] 기본 생성자를 이용해 EmpImpl 빈 생성 -->
 	<bean id="e1" class="ex05.EmpImpl"/>
 	<!-- [2] String 유형 1개(name) 생성자를 통해 주입해보자.-->
@@ -15,5 +20,14 @@
 		<constructor-arg index="1" type="java.lang.String" value="James"/>
 	</bean>
 	<!--[4] 부서,이름,급여  -->
+	<bean id="e4" class="ex05.EmpImpl">
+		<constructor-arg index="0" type="java.lang.String" value="Account"/>
+		<constructor-arg index="1" type="String" value="Tom"/>
+		<constructor-arg index="2" type="int" value="2400"/>
+	</bean>
 	<!--[5] Random객체를 받는 생성자 -->
+	<bean id="e5" class="ex05.EmpImpl">
+		<constructor-arg index="0" type="java.util.Random" ref="random"/>
+	</bean>
+	<bean id="random" class="java.util.Random"/>
 </beans>
